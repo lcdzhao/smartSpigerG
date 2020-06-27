@@ -3,8 +3,11 @@
 程序运行入口
 """
 import sys
+
+from wechatHelpers.ChatManager import ChatManager
+
 sys.path.append('wechatHelpers')
-from ChatManager import ChatManager
+
 
 def run():
     """

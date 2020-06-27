@@ -8,9 +8,9 @@
 步态部分最多可以控制12个舵机，云台部分可控制2个舵机。
 你可以来将程序应用在不同的四足机器人上面。
 '''
-import socket
-import time
 import threading
+import time
+
 try:
 	import Adafruit_PCA9685
 	pwm = Adafruit_PCA9685.PCA9685()
@@ -773,6 +773,36 @@ def walk(direction):
 	goal_command = direction
 	Servo.resume()
 
+
+def act(action):
+	if '往前走' == action:
+		walk('forward')
+	elif '往后走' == action:
+		walk('backward')
+	elif '站起来' == action:
+		walk('StandUp')
+	elif '坐下去' == action:
+		walk('StayLow')
+	elif '抬头' == action:
+		headUp()
+	elif '低头' == action:
+		headDown()
+	elif '向左转' == action:
+		headLeft()
+	elif '向右转' == action:
+		headRight()
+	elif '摇头' == action:
+		headLeft()
+		time.sleep(2)
+		headRight()
+	elif '乱晃几下' == action:
+		walk('Lean-R')
+		time.sleep(2)
+		walk('Lean-L')
+		time.sleep(2)
+		walk('Lean-R')
+		time.sleep(2)
+		walk('Lean-L')
 
 def servoStop():
 	'''
