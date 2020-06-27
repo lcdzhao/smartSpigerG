@@ -4,6 +4,8 @@ import time
 import itchat
 import requests
 
+from spiderG import SpiderG
+
 
 class Chater:
     """
@@ -15,7 +17,6 @@ class Chater:
         初始化
         '''
         self.wechat_name = wechat_name
-        self.is_using = False
         self.name_uuid = name_uuid
 
     def get_zhao_words(self, babyWords):
@@ -38,11 +39,8 @@ class Chater:
         '''
         回复消息
         '''
-        if not self.is_using:
-            itchat.send_msg("已被禁用", toUserName=self.name_uuid)
-            return
 
-        self.act(babyWords)
+        SpiderG.act(babyWords)
         reply_words = self.get_zhao_words(babyWords)
 
         # 延时1s后发送
