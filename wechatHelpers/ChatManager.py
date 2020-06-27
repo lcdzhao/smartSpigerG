@@ -220,3 +220,4 @@ class ChatManager:
         if not self.is_online(auto_login=True):
             return
         _thread.start_new_thread(self.keepAliveJob, ())
+        time.sleep(100000)
