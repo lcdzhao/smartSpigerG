@@ -1,0 +1,9 @@
+requests
+beautifulsoup4
+itchat
+apscheduler
+pyyaml
+lxml
+baidu-aip
+pydub
+ffmpeg
