@@ -10,14 +10,17 @@ import socket
 import threading
 import time
 
-from spiderG import SpiderG
+import SpiderG
 
 SpiderG.move_init()
+
 import os
-from spiderG import FPV
-from spiderG import info
-from spiderG import LED
-from spiderG import switch
+import FPV
+import info
+import LED
+import switch
+switch.switchSetup()
+switch.set_all_switch_off()
 
 functionMode = 0
 inited = False
@@ -51,14 +54,10 @@ def ap_thread():
     os.system("sudo create_ap wlan0 eth0 Groovy 12345678")
 
 
-def init():
-    if not inited:
-        switch.switchSetup()
-        switch.set_all_switch_off()
+
 
 
 def act(commond):
-    init()
     global speed_set, functionMode, direction_command, turn_command
 
     speed_set = 100
