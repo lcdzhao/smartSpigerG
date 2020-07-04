@@ -10,14 +10,14 @@ import socket
 import threading
 import time
 
-import SpiderG
+from spiderG import SpiderG
 
 SpiderG.move_init()
 
 import os
-import FPV
-import info
-import LED
+from spiderG import FPV
+from spiderG import info
+from spiderG import LED
 import switch
 switch.switchSetup()
 switch.set_all_switch_off()
