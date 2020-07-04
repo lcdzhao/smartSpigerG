@@ -26,7 +26,7 @@ MPU_connection = 1
 try:
 	from mpu6050 import mpu6050
 	from spiderG import PID
-	import Kalman_filter
+	from spiderG import Kalman_filter
 	sensor = mpu6050(0x68)
 	print('mpu6050 connected\n姿态传感器已连接，相关功能可以使用。')
 	mpu_tor = 0
