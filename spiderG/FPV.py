@@ -10,16 +10,17 @@ import base64
 import datetime
 from collections import deque
 
-import LED
-import PID
-import SpiderG
 import cv2
 import imutils
 import picamera
-import switch
 import zmq
 from picamera.array import PiRGBArray
 from rpi_ws281x import *
+
+from spiderG import LED
+from spiderG import PID
+from spiderG import SpiderG
+from spiderG import switch
 
 pid = PID.PID()
 pid.SetKp(0.5)

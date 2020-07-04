@@ -18,7 +18,7 @@ import os
 from spiderG import FPV
 from spiderG import info
 from spiderG import LED
-import switch
+from spiderG import switch
 switch.switchSetup()
 switch.set_all_switch_off()
 
