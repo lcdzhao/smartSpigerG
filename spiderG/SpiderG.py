@@ -25,7 +25,7 @@ except:
 MPU_connection = 1
 try:
 	from mpu6050 import mpu6050
-	import PID
+	from spiderG import PID
 	import Kalman_filter
 	sensor = mpu6050(0x68)
 	print('mpu6050 connected\n姿态传感器已连接，相关功能可以使用。')
@@ -46,9 +46,9 @@ try:
 	kalman_filter_X =  Kalman_filter.Kalman_filter(0.001,0.1)
 	kalman_filter_Y =  Kalman_filter.Kalman_filter(0.001,0.1)
 	steadyMode = 0
-except:
+except ZeroDivisionError as e:
 	MPU_connection = 0
-	print('mpu6050 disconnected\n姿态传感器未连接，相关功能关闭。')
+	print('mpu6050 disconnected\n姿态传感器未连接，相关功能关闭。\r\n'+e)
 
 '''
 改变这里的数值来定义不同位置的舵机。
