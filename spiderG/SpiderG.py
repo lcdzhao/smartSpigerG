@@ -46,7 +46,7 @@ try:
 	kalman_filter_X =  Kalman_filter.Kalman_filter(0.001,0.1)
 	kalman_filter_Y =  Kalman_filter.Kalman_filter(0.001,0.1)
 	steadyMode = 0
-except ZeroDivisionError as e:
+except BaseException as e:
 	MPU_connection = 0
 	print('mpu6050 disconnected\n姿态传感器未连接，相关功能关闭。\r\n'+e)
 
