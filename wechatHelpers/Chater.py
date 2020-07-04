@@ -4,7 +4,7 @@ import time
 import itchat
 import requests
 
-from spiderG import SpiderG
+from spiderG import ActionController
 
 
 class Chater:
@@ -40,7 +40,7 @@ class Chater:
         回复消息
         '''
 
-        SpiderG.act(babyWords)
+        ActionController.act(babyWords)
         reply_words = self.get_zhao_words(babyWords)
 
         # 延时1s后发送

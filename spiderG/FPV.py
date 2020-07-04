@@ -1,28 +1,25 @@
 #!/usr/bin/env/python3
-# File name   : server.py
+# File name   : ActionController.py
 # Description : for FPV video and OpenCV functions
 # Website     : www.gewbot.com
 # Author      : William(Based on Adrian Rosebrock's OpenCV code on pyimagesearch.com)
 # Date        : 2019/08/28
 
-import time
-import threading
-import cv2
-import zmq
-import base64
-import picamera
-from picamera.array import PiRGBArray
 import argparse
-import imutils
-from collections import deque
-import psutil
-import os
-import SpiderG
-import PID
-import LED
+import base64
 import datetime
-from rpi_ws281x import *
+from collections import deque
+
+import LED
+import PID
+import SpiderG
+import cv2
+import imutils
+import picamera
 import switch
+import zmq
+from picamera.array import PiRGBArray
+from rpi_ws281x import *
 
 pid = PID.PID()
 pid.SetKp(0.5)
